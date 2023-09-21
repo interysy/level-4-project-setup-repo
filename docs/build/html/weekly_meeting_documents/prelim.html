@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preliminary Individual Meeting With Supervisor 19/09/23 &#8212; String Search Algorithm Visualiser 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Weekly Meeting Documents" href="weekly_meeting_documents.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="weekly_meeting_documents.html" title="Weekly Meeting Documents"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">String Search Algorithm Visualiser 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="weekly_meeting_documents.html" accesskey="U">Weekly Meeting Documents</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Preliminary Individual Meeting With Supervisor 19/09/23</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="preliminary-individual-meeting-with-supervisor-19-09-23">
+<h1>Preliminary Individual Meeting With Supervisor 19/09/23<a class="headerlink" href="#preliminary-individual-meeting-with-supervisor-19-09-23" title="Link to this heading">¶</a></h1>
+<section id="what-have-i-done-so-far">
+<h2>What Have I Done So Far?<a class="headerlink" href="#what-have-i-done-so-far" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Research On Existing Animators</p></li>
+<li><p>Read Over Project Documents On Moodle (how to handle meetings, tools , time expectation etc.)</p></li>
+<li><p>Starting to think about what tech I can use</p></li>
+<li><p>Looking at how to go about making a visualiser</p></li>
+</ul>
+</section>
+<section id="current-known-requirements">
+<h2>Current Known Requirements<a class="headerlink" href="#current-known-requirements" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Need to be able to support naive,BM and KMP</p></li>
+</ul>
+</section>
+<section id="current-ideas">
+<h2>Current Ideas<a class="headerlink" href="#current-ideas" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Thinking of having a side by side view - left hand side is the animation of example string , right hand side would be the the current step in the algorithm.</p></li>
+<li><p>Use angular, 1 main component, 2 child components</p></li>
+<li><p>Thinking of making a web application for ease of portability</p></li>
+<li><p>Have autoplay</p></li>
+<li><p>Have go forward and go backwards buttons</p></li>
+<li><p>Have pause</p></li>
+<li><p>Have messages letting user know what is happening at the current step</p></li>
+<li><p>Ability to speed up / slow down autoplay of animation</p></li>
+<li><p>Ability to input search string and target string</p></li>
+<li><p>Description of algorithm below the visualiser</p></li>
+<li><p>Would like to utilise observer pattern - notify one side of changes on other (forward/backward buttons should notify both sides of changes, as these will be in the parent component)</p></li>
+<li><p>Strategy pattern to allow different algorithms to be plugged into the visualiser.</p></li>
+</ul>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Treat Gethin as a client?</p></li>
+<li><p>VCS - Github, Gitlab</p></li>
+<li><p>Can repo be public? When public if not?</p></li>
+<li><p>What licences can I use?</p></li>
+<li><p>Trello</p></li>
+<li><p>Write dissertation as I build the product - especially the analysis part , less so the rest</p></li>
+<li><p>Do you have any tech / libraries I can start looking at for the implementation?</p></li>
+<li><p>I have found that there is 2 ways of approaching - get all steps at start or work out dynamically? Which do you think is better?</p></li>
+<li><p>What reference manager do you recommend?</p></li>
+<li><p>Would it be appropriate to create a pipeline this week for automatic testing and deployment (onto a test site)?</p></li>
+<li><p>What do you think of the current plan?</p></li>
+</ul>
+</section>
+<section id="proposed-plan-until">
+<h2>Proposed Plan Until<a class="headerlink" href="#proposed-plan-until" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Set up repo (once VCS confirmed)</p></li>
+<li><p>Choose tech (hopefully at this meeting)</p></li>
+<li><p>Set up a pipeline for auto disseration compilation and software build</p></li>
+<li><p>Put current plan in trello</p></li>
+<li><p>Wireframes for initial plan</p></li>
+<li><p>Set up dissertation and reference manager software</p></li>
+<li><p>Create skeleton of the project</p></li>
+<li><p>Start drawing out structure - strategy and observer pattern</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Preliminary Individual Meeting With Supervisor 19/09/23</a><ul>
+<li><a class="reference internal" href="#what-have-i-done-so-far">What Have I Done So Far?</a></li>
+<li><a class="reference internal" href="#current-known-requirements">Current Known Requirements</a></li>
+<li><a class="reference internal" href="#current-ideas">Current Ideas</a></li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+<li><a class="reference internal" href="#proposed-plan-until">Proposed Plan Until</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="weekly_meeting_documents.html"
+                          title="previous chapter">Weekly Meeting Documents</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/weekly_meeting_documents/prelim.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="weekly_meeting_documents.html" title="Weekly Meeting Documents"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">String Search Algorithm Visualiser 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="weekly_meeting_documents.html" >Weekly Meeting Documents</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Preliminary Individual Meeting With Supervisor 19/09/23</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Michal Wozniak.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
