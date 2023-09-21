@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage
-          path: ./coverage/index.html
+          path: ./coverage/my-app/index.html
 
       - name : Lint Code  
         working-directory: ./src/myApp 
