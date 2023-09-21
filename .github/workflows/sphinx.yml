@@ -21,22 +21,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.10
+    - name: Set up Python 3.10 
       uses: actions/setup-python@v3
       with:
         python-version: "3.10" 
-        requirements: requirements.txt
-    - name: Install dependencies
+        requirements: docs/requirements.txt
+    - name: Install Sphinx dependencies
       run: | 
         ls 
         python -m pip install --upgrade pip
         pip install -U sphinx
-        pip install furo
         
     - name: Build documentation
       run: |
         cd docs
-        sphinx-apidoc -e -M --force -o . ../utilities/
         make html
     - name: Upload build data
       uses: actions/upload-artifact@v3
@@ -63,7 +61,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
