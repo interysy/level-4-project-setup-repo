@@ -22,17 +22,17 @@ jobs:
           node-version: 18
 
       - name: Install dependencies 
-        working-directory: ./src/myApp
+        working-directory: $APP_DIRECTORY
         run: npm install
 
       - name: Build Angular project 
-        working-directory: ./src/myApp
-        run: npm run build
+        working-directory: $APP_DIRECTORY
+        run: npm run build:prod
 
       - name: Run tests 
-        working-directory: ./src/myApp
-        run: npm run test:prod 
+        working-directory: $APP_DIRECTORY
+        run: npm run test
          
       - name : Lint Code  
-        working-directory: ./src/myApp 
+        working-directory: $APP_DIRECTORY
         run: npm run lint
