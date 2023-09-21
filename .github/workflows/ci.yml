@@ -33,6 +33,8 @@ jobs:
         working-directory: ./src/myApp
         run: | 
           npm run test 
+          ls 
+          cd coverage  
           ls
          
       - name : Upload code coverage 
