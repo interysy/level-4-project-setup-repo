@@ -31,7 +31,9 @@ jobs:
 
       - name: Run tests 
         working-directory: ./src/myApp
-        run: npm run test
+        run: | 
+          npm run test 
+          ls
          
       - name : Upload code coverage 
         uses: actions/upload-artifact@v3
