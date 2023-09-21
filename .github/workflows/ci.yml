@@ -38,7 +38,8 @@ jobs:
           cd coverage  
           ls  
           echo "LOL"
-          cd my-app
+          cd my-app 
+          ls
          
       - name : Upload code coverage 
         uses: actions/upload-artifact@v3
