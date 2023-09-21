@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests 
         working-directory: ./src/myApp
-        run: npm run test:prod 
+        run: npm run test
          
       - name : Lint Code  
         working-directory: ./src/myApp 
