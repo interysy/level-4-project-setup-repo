@@ -12,29 +12,29 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
         run: | 
-          cd src 
-          cd myApp
+          cd src/myApp
           npm install
 
       - name: Build Angular project
         run: |  
-          cd src 
-          cd myApp
+          cd src/myApp
           npm run build
  
   test: 
     needs : build  
     runs-on: ubuntu-latest
-    steps:
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Run tests
         run: |  
           cd src/myApp 
