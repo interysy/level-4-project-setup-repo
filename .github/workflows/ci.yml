@@ -41,7 +41,8 @@ jobs:
           cd my-app 
           ls
          
-      - name : Upload code coverage 
+      - name : Upload code coverage  
+        working-directory: ./src/myApp
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage
