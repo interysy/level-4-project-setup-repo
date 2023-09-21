@@ -42,11 +42,10 @@ jobs:
           ls
          
       - name : Upload code coverage  
-        working-directory: ./src/myApp
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage
-          path: ./coverage/my-app/index.html
+          path: ./src/myApp/coverage/my-app/index.html
 
       - name : Lint Code  
         working-directory: ./src/myApp 
