@@ -8,7 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+    defaults:
+      run:
+        working-directory: src/myApp
 
     steps:
       - name: Checkout code
@@ -20,16 +23,13 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: | 
-          cd src/myApp
-          npm install
+        run: npm install
 
       - name: Build Angular project
-        run: |  
-          cd src/myApp
-          npm run build
+        run: npm run build
 
       - name: Run tests
-        run: |  
-          cd src/myApp 
-          npm run test
+        run: npm run test:prod 
+         
+      -name : Lint Code 
+        run: npm run lint
