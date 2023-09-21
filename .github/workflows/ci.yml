@@ -20,10 +20,16 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
+        run: | 
+          cd src 
+          cd myApp
+          npm install
 
       - name: Build Angular project
-        run: ng build --prod
+        run: |  
+          cd src 
+          cd myApp
+          ng build --prod
  
   test: 
     needs : build  
