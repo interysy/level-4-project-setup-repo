@@ -6,9 +6,6 @@ on:
 
   workflow_dispatch:  
    
-env: 
-  APP_DIRECTORY : ./src/myApp
-
 jobs:
   build:
     runs-on: ubuntu-latest 
@@ -31,15 +28,8 @@ jobs:
 
       - name: Run tests 
         working-directory: ./src/myApp
-        run: | 
-          npm run test 
-          ls  
-          echo "LOL"
-          cd coverage  
-          ls  
-          echo "LOL"
-          cd my-app 
-          ls
+        run: npm run test 
+          
          
       - name : Upload code coverage  
         uses: actions/upload-artifact@v3
