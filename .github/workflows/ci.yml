@@ -4,32 +4,36 @@ on:
   push:
     branches: ["main"]
 
-  workflow_dispatch: 
+  workflow_dispatch:  
+   
+env: 
+  APP_DIRECTORY : ./src/myApp
 
 jobs:
   build:
     runs-on: ubuntu-latest 
-    defaults:
-      run:
-        working-directory: src/myApp
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Set up Node.js 
+        working-directory: ./src/myApp
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install dependencies 
+        working-directory: ./src/myApp
         run: npm install
 
-      - name: Build Angular project
+      - name: Build Angular project 
+        working-directory: ./src/myApp
         run: npm run build
 
-      - name: Run tests
+      - name: Run tests 
+        working-directory: ./src/myApp
         run: npm run test:prod 
          
-      -name : Lint Code 
+      - name : Lint Code  
+        working-directory: ./src/myApp 
         run: npm run lint
