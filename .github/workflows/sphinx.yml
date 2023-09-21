@@ -46,7 +46,7 @@ jobs:
     needs : build 
     environment:
       name: documentation
-      url: https://interysy.github.io/docs
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest 
     permissions:
       contents: write
