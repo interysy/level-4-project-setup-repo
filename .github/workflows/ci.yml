@@ -33,9 +33,12 @@ jobs:
         working-directory: ./src/myApp
         run: | 
           npm run test 
-          ls 
+          ls  
+          echo "LOL"
           cd coverage  
-          ls
+          ls  
+          echo "LOL"
+          cd my-app
          
       - name : Upload code coverage 
         uses: actions/upload-artifact@v3
