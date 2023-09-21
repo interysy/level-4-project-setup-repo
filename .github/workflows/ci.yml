@@ -33,6 +33,12 @@ jobs:
         working-directory: ./src/myApp
         run: npm run test
          
+      - name : Upload code coverage 
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage
+          path: ./coverage/index.html
+
       - name : Lint Code  
         working-directory: ./src/myApp 
         run: npm run lint
