@@ -1,4 +1,4 @@
-# Plan Hello
+# Plan Hello Hello
 
 * String Search Algorithm Visualiser
 * Michal Wozniak
