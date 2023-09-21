@@ -19,18 +19,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10 
-      uses: actions/setup-python@v3
+    steps: 
+    - name: Set up Python 3.10 and Install Sphinx Dependencies
+    - uses: actions/checkout@v4 
+    - uses: actions/setup-python@v3  
       with:
         python-version: "3.10" 
-        requirements: docs/requirements.txt
-    - name: Install Sphinx dependencies
-      run: | 
-        ls 
-        python -m pip install --upgrade pip
-        pip install -U sphinx
+    - uses: BSFishy/pip-action@v1
+        with:
+          requirements: docs/requirements.txt 
+          upgrade: true 
         
     - name: Build documentation
       run: |
