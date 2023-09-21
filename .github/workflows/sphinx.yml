@@ -22,15 +22,12 @@ jobs:
     - uses: actions/checkout@v4 
 
     - name: Set up Python (Latest)
-      uses: actions/setup-python@v4  
-      with:
-        python-version: "3.10"
+      uses: actions/setup-python@v4 
 
     - name: Install dependencies (requirements.txt)
       run: |
         python -m pip install --upgrade pip
         pip install -r docs/requirements.txt 
-
     - name: Build documentation
       run: |
         cd docs
@@ -58,4 +55,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs/build/html
-       
