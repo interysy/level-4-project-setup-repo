@@ -1,7 +1,6 @@
-name: Deploy Documentation on Pages
+name: "Sphinx: Render docs"
 
 on:
-
   push:
     branches: ["main"]
 
@@ -19,49 +18,20 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps: 
-    - name: Set up Python 3.10 and Install Sphinx Dependencies
-    - uses: actions/checkout@v4 
-    - uses: actions/setup-python@v3  
-      with:
-        python-version: "3.10" 
-    - uses: BSFishy/pip-action@v1
-        with:
-          requirements: docs/requirements.txt 
-          upgrade: true 
-        
-    - name: Build documentation
-      run: |
-        cd docs
-        make html
-    - name: Upload build data
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build HTML
+      uses: ammaraskar/sphinx-action@master
+    - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: documentation
-        path: ./docs/_build/html
-       
-  deploy:
-    needs: build
-    environment:
-      name: documentation
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-   
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Download built directory
-        uses: actions/download-artifact@v3
-        with:
-          name: documentation
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        with:
-          folder: build
+        name: html-docs
+        path: docs/build/html/
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/build/html
