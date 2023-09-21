@@ -1,0 +1,29 @@
+name: Compile Latex
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+        
+    - name: "Compile LaTex"
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: ./docs/source/dissertation/l4proj.tex
+        latexmk_use_xelatex: true
+      
+
+    - name: "Upload PDF"
+      uses: actions/upload-artifact@v3
+      with:
+        path: ./docs/source/dissertation/l4proj.pdf
