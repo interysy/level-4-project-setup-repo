@@ -30,4 +30,8 @@
  
 ### 20 September 
 * *1 hour* Solving laptop issues regarding pip and setting up repository for the project (also applying for github pro through the student pack) 
-* *2 hours* Messing around with Sphinx Docs, which will be used to automatically show all my timelogs, plans etc. on Github alongside code documentation
+* *2 hours* Messing around with Sphinx Docs, which will be used to automatically show all my timelogs, plans etc. on Github alongside code documentation 
+ 
+### 21 September 
+* *3 hours* Setting up pipeline for automatic wiki deployment and code testing  
+* *1.5 hours* Research of potential deployment servers for continous deployment
