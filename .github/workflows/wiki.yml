@@ -26,8 +26,8 @@ jobs:
       - name: Upload build data 
         uses: actions/upload-artifact@v3 
         with:
-          name: documentation
-          path: ./documentation  
+          name: documentation 
+          path: ./docs  
   deploy:
     name : Deploy 
     needs: build
@@ -44,9 +44,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./documentation
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          folder: documentation
+          folder: documentation-build
