@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
-      - name: Build image
-        run: docker build -t sample/angular-test .
+      - name: Build image 
+        run: | 
+            cd src/myApp 
+            docker build -t sample/angular-test .  
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
