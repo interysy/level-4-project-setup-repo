@@ -42,6 +42,7 @@ jobs:
           path: ./src/myApp/documentation 
       - name: Deploy to github pages
         uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
+        with: 
+          BRANCH : main
           FOLDER: documentation 
           CLEAN: true 
