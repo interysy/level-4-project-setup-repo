@@ -26,8 +26,9 @@ source_suffix = {
 } 
  
 js_language = 'typescript' 
-js_source_path = '../../src' 
-primary_domain = 'js'
+js_source_path = '../../src/myApp' 
+primary_domain = 'js' 
+entryPointStrategy =  "expand"
 
 
 # -- Options for HTML output -------------------------------------------------

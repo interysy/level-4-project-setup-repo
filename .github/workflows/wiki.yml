@@ -1,0 +1,52 @@
+name: Wiki Test
+
+on:
+    push:
+      branches: ["main"]
+  
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies 
+        working-directory: ./src/myApp
+        run: npm install
+      - name: Build doc
+        run: npm run doc
+      - name: Archive www Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: documentation
+          path: documentation
+  deploy:
+    name : Deploy 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Pages
+        uses: actions/configure-pages@v3 
+      - name: Download built directory
+        uses: actions/download-artifact@v3
+        with:
+          name: documentation 
+          path: documentation
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: documentation
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        with:
+          folder: documentation

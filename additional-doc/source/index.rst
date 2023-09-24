@@ -18,7 +18,6 @@ contains the following:
    weekly_meeting_documents/weekly_meeting_documents 
    status_report/status_report   
    dissertation/dissertation 
-   .. js:autofunction:: linkDensity
   
 
 .. toctree:: 
@@ -31,4 +30,6 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
+* :ref:`search` 
+ 
+.. js:autofunction:: linkDensity
