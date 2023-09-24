@@ -34,20 +34,31 @@ jobs:
           name: documentation 
           path: ./src/myApp/documentation 
   deploy:
-    name : Deploy 🚀
     needs: build
+    environment:
+      name: documentation
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
+   
+      - name: Checkout
+        uses: actions/checkout@v3 
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3 
+
+      - name: Download built directory
+        uses: actions/download-artifact@v3
         with:
-          name: documentation
-          path: ./src/myApp/documentation 
-      - name: Deploy to github pages
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with: 
-          BRANCH : gh-pages
-          FOLDER: documentation
-          CLEAN: true 
+          name: documentation 
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.' 
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        with:
+          folder: build
