@@ -49,5 +49,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with: 
           BRANCH : gh-pages
-          FOLDER: documentation 
+          FOLDER: ./src/myApp/documentation 
           CLEAN: true 
