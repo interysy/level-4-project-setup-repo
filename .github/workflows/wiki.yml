@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3 
         with:
           name: documentation 
-          path: documentation 
+          path: ./src/myApp/documentation 
   deploy:
     name : Deploy 
     needs: build
@@ -41,7 +41,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: documentation
-          path: documentation
+          path: ./src/myApp/documentation 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
