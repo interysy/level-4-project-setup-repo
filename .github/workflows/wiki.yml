@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3 
         with:
           name: documentation 
-          path: ./docs  
+          path: documentation 
   deploy:
     name : Deploy 
     needs: build
@@ -40,7 +40,8 @@ jobs:
       - name: Download built directory
         uses: actions/download-artifact@v3
         with:
-          name: documentation 
+          name: documentation
+          path: documentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -49,4 +50,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          folder: documentation-build
+          folder: documentation
