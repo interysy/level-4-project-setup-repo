@@ -17,7 +17,8 @@ contains the following:
    meetings/meetings 
    weekly_meeting_documents/weekly_meeting_documents 
    status_report/status_report   
-   dissertation/dissertation
+   dissertation/dissertation 
+   .. js:autofunction:: linkDensity
   
 
 .. toctree:: 
